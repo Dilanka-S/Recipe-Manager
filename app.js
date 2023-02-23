@@ -9,12 +9,12 @@ const app = express();
 // app.use('/',(request, response, next)=>{
 //     response.send("Welcome to the Recipe Manager")
 // });
-
+app.use(express.json());
 app.use("/recipes", router);
 //Connecting to the MongoDB server
 mongoose.set('strictQuery',false);
 mongoose.connect(
-    "mongodb+srv://admin:2976AbkbhGV6NP9W@cluster0.of37cws.mongodb.net/recipeManager?retryWrites=true&w=majority"
+    "mongodb+srv://admin:oEwD0RX8q0j2ZGFx@cluster0.yr4kxuh.mongodb.net/?retryWrites=true&w=majority"
      )
      .then(()=>console.log("Connected to the Recipe Manager database"))
      .then(()=>{
@@ -24,4 +24,4 @@ mongoose.connect(
 
 // Default created admin account details;
 // username : admin
-// admin password  : 2976AbkbhGV6NP9W
+// admin password  : oEwD0RX8q0j2ZGFx

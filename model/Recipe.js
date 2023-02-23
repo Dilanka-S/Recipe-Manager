@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Defining the db model schema for the Recipes with properties as defined in the specification
 const recipeSchema = new Schema({
-    id: {
+    recipeId: {
         type: Number,
         required: true
     },
@@ -19,6 +19,10 @@ const recipeSchema = new Schema({
         type: String,
         required: true
     },
+    recipeCover: {
+        
+    }
+
 });
 // exporting the created Recipe db model
 module.exports = mongoose.model("Recipe", recipeSchema);
