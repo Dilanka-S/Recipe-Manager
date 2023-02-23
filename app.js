@@ -23,4 +23,3 @@ mongoose.connect(
 // Default created admin account details;
 // username : admin
 // admin password  : 2976AbkbhGV6NP9W
-//hello
