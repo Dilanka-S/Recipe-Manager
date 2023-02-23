@@ -12,6 +12,7 @@ const app = express();
 
 app.use("/recipes", router);
 //Connecting to the MongoDB server
+mongoose.set('strictQuery',false);
 mongoose.connect(
     "mongodb+srv://admin:2976AbkbhGV6NP9W@cluster0.of37cws.mongodb.net/recipeManager?retryWrites=true&w=majority"
      )
