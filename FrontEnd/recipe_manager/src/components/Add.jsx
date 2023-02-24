@@ -49,34 +49,35 @@ const AddRecipe = () => {
         marginLeft={"auto"}
         marginRight={"auto"}
         marginTop={10}>
-            <h1 marginTop={"3px"}>Let's add a new recipe to your collection!</h1>
+            <h1>Let's add a new recipe to your collection!</h1>
             
-            <FormLabel>Recipe ID</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Recipe ID</FormLabel>
             <TextField 
             type = "number"
+            fontFamily = "Barlow"
             margin="normal"
             fullWidth variant='outlined' 
             name="recipeId"
-            value={inputs.recieptId}
+            value={inputs.recipeId}
             onChange={handleChange}/>
 
-            <FormLabel>Name</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Name</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
             name="name"
             value={inputs.name}
             onChange={handleChange}/>
-            <FormLabel>Ingredients</FormLabel>
-            
+
+            <FormLabel sx={{fontFamily:"Barlow"}}>Ingredients</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
             name="ingredients"
             value={inputs.ingredients}
             onChange={handleChange}/>
-            <FormLabel>Description</FormLabel>
-            
+
+            <FormLabel sx={{fontFamily:"Barlow"}}>Description</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -84,7 +85,7 @@ const AddRecipe = () => {
             value={inputs.description}
             onChange={handleChange}/> 
             
-            <FormLabel>Image Link</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Image Link</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -92,11 +93,14 @@ const AddRecipe = () => {
             value={inputs.imageLink}
             onChange={handleChange}/>  
             
-            <Button variant='contained' 
+            <Button 
+            variant='contained' 
             type="submit"
             justifyContent="center"
             fullWidth= "outlined"
-            color="secondary">
+            color="secondary"
+            background="black"
+            sx={{fontFamily:"Barlow"}}>
                 submit new recipe    
             </Button>    
         </Box>

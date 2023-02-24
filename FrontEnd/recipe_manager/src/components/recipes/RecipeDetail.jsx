@@ -64,7 +64,7 @@ const RecipeDetail = () => {
         marginRight={"auto"}
         marginTop={10}>
 
-            <FormLabel>Recipe ID</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Recipe ID</FormLabel>
             <TextField 
             type = "number"
             margin="normal"
@@ -73,7 +73,7 @@ const RecipeDetail = () => {
             value={inputs.recipeId}
             onChange={handleChange}/>
 
-            <FormLabel>Name</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Name</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -81,7 +81,7 @@ const RecipeDetail = () => {
             value={inputs.name}
             onChange={handleChange}/>
 
-            <FormLabel>Ingredients</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Ingredients</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -89,7 +89,7 @@ const RecipeDetail = () => {
             value={inputs.ingredients}
             onChange={handleChange}/>
 
-            <FormLabel>Description</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Description</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -97,7 +97,7 @@ const RecipeDetail = () => {
             value={inputs.description}
             onChange={handleChange}/> 
             
-            <FormLabel>Image Link</FormLabel>
+            <FormLabel sx={{fontFamily:"Barlow"}}>Image Link</FormLabel>
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -111,7 +111,7 @@ const RecipeDetail = () => {
             fullWidth= "outlined"
             color="primary"
             sx={{fontFamily:"initial"}}>
-                Update the recipe    
+                Update this recipe    
             </Button>  
         </Box>
     </form>

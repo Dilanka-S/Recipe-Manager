@@ -8,10 +8,17 @@ const Home = () => {
     display={"flex"}
     flexDirection={"column"}
     alignContent={"center"}>
-        <h1 alignContent="center">Welcome to THE RECIPE MANAGER!</h1>
+        <Typography 
+        sx={{fontFamily:"Barlow"}}
+        variant="h1"
+        marginTop={"30px"}
+        marginLeft={"20px"}
+        //justifySelf={"center"}
+        >WELCOME TO THE<br/>RECIPE MANAGER!
+        </Typography>
         <Button 
         LinkComponent={Link} to="/recipes"
-        sx={{marginTop: 15, background:'orangered'}} 
+        sx={{marginTop: 5, background:'black', fontFamily:'Barlow'}} 
         variant='contained'>
             <Typography variant="h3"> View All Recipes </Typography>
         </Button>

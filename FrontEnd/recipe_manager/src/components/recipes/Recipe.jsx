@@ -14,13 +14,14 @@ const Recipe = (props) => {
           .then(() => history("/"))
           .then(()=>history("/"))
           .then(() => history("/recipes"));
+        
     };
 // Card component to configure the output of each list item to be displayed
   return ( 
     <div className='card'>
     <img src = {image} alt={name}/>
     <article>Recipe ID: {recipeId}</article>
-    <h3>{name}</h3>
+    <h2>{name}</h2>
     <p>{ingredients}</p>
     <p>{description}</p>
     <Button 

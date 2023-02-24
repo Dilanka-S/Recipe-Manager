@@ -11,7 +11,7 @@ const Header = () => {
         sx = {{backgroundColor:'#000000', fontFamily:""}}>
             <Toolbar>
                 <NavLink to="/"style={{ color:"white", textDecoration: 'none'}}>
-                <Typography>
+                <Typography sx={{fontFamily:"Barlow"}}>
                     <BrunchDiningIcon/> THE RECIPE MANAGER
                 </Typography>
                 </NavLink>
@@ -21,22 +21,27 @@ const Header = () => {
                 indicatorColor="secondary" 
                 value={value} 
                 onChange={(e, val) => setValue(val)}>
-                    <Tab 
+                    <Tab
+                    sx={{fontFamily:"Barlow"}} 
                     LinkComponent={NavLink} 
                     to="/recipes" 
                     label='Recipes'/>
 
-                    <Tab 
+                    <Tab
+                    sx={{fontFamily:"Barlow"}} 
                     LinkComponent={NavLink} 
                     to="/add" 
                     label='Add Recipe'/>
 
-                    <Tab 
+                    <Tab
+                    sx={{fontFamily:"Barlow"}} 
                     onClick={()=>{
                         window.location.reload();
                     }}
                     label="Refresh"/>
+
                     <Tab 
+                    sx={{fontFamily:"Barlow"}}
                     LinkComponent={NavLink} 
                     to="/creator" 
                     label='The Creator'/>
