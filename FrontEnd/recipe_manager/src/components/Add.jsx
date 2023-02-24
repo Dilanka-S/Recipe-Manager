@@ -2,7 +2,7 @@ import { Box, Button, FormLabel, TextField } from '@mui/material';
 import axios from 'axios';
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Notifications from './Notifications';
 const AddRecipe = () => {
     const history = useNavigate
     const [inputs, setInputs] = useState({
@@ -13,6 +13,9 @@ const AddRecipe = () => {
         image:''
     }
     );
+
+    const [notify, setNotify] = useState({isOpen:false, message:'', type:''})
+
     const handleChange=(e)=>{
         setInputs((prevState)=>({
             ...prevState,
@@ -20,6 +23,7 @@ const AddRecipe = () => {
         }));
         console.log(e.target.name,"Value", e.target.value);
     }
+
 
     //Function to send the requests to the database with user data
     const sendRequest = async() => {
@@ -37,6 +41,12 @@ const AddRecipe = () => {
         event.preventDefault();
         console.log(inputs);
         sendRequest().then(()=>history('/recipes'));
+        setNotify({
+            isOpen:true,
+            message: 'Submitted Successfully',
+            type : 'success'
+
+        })
     }
     return <form onSubmit={handleSubmit}>
         <Box 
@@ -100,10 +110,17 @@ const AddRecipe = () => {
             fullWidth= "outlined"
             color="secondary"
             background="black"
-            sx={{fontFamily:"Barlow"}}>
+            sx={{fontFamily:"Barlow"}}
+            // onClick={()=>{
+            //     <Alert severity="success">This is a success alert — check it out!</Alert>
+            // }}
+            >
                 submit new recipe    
             </Button>    
         </Box>
+        <Notifications
+        notify={notify}
+        setNotify={setNotify}/>
     </form>
 }
 

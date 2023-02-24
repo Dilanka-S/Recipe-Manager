@@ -18,7 +18,7 @@ const Recipes = () => {
     console.log(recipes);
     return (
     <div>
-        <ul>
+        <ul list-style-type="none">
             {recipes && 
             recipes.recipes.map((recipe, i)=>(
                 <li className="recipe" key={i}>

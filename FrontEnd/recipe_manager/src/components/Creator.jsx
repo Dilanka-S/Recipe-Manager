@@ -8,13 +8,13 @@ const Creator = () => {
         sx={{fontFamily:"Barlow", alignContent:"end", justifyContent:"end"}}
         variant="h2"
         marginTop={"10px"}
-        marginLeft={"100px"}>This a sample CRUD Application,<br/> built with MERN stack
+        marginLeft={"100px"}>This is a sample CRUD Application,<br/> built with MERN stack
         </Typography>
         <Typography 
         sx={{fontFamily:"Barlow"}}
         variant="h4"
         //marginTop={"20px"}
-        marginLeft={"100px"}>To showcase the functionality of a recipe managment application
+        marginLeft={"100px"}>To showcase the functionalities of a recipe manager
         </Typography>
         <Typography 
         sx={{fontFamily:"Barlow"}}
