@@ -17,7 +17,7 @@ const Recipe = (props) => {
     };
 // Card component to configure the output of each list item to be displayed
   return ( 
-    <div className='card '>
+    <div className='card'>
     <img src = {image} alt={name}/>
     <article>Recipe ID: {recipeId}</article>
     <h3>{name}</h3>

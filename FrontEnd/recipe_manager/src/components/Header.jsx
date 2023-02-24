@@ -8,9 +8,9 @@ const Header = () => {
     <div> 
         <AppBar 
         position='sticky'
-        sx = {{backgroundColor:'#000000'}}>
+        sx = {{backgroundColor:'#000000', fontFamily:""}}>
             <Toolbar>
-                <NavLink to="/"style={{ color:"white"}}>
+                <NavLink to="/"style={{ color:"white", textDecoration: 'none'}}>
                 <Typography>
                     <BrunchDiningIcon/> THE RECIPE MANAGER
                 </Typography>
@@ -31,6 +31,11 @@ const Header = () => {
                     to="/add" 
                     label='Add Recipe'/>
 
+                    <Tab 
+                    onClick={()=>{
+                        window.location.reload();
+                    }}
+                    label="Refresh"/>
                     <Tab 
                     LinkComponent={NavLink} 
                     to="/creator" 
