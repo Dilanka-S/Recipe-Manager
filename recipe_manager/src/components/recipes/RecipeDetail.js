@@ -8,36 +8,44 @@ import { useNavigate, useParams } from 'react-router-dom'
 const RecipeDetail = () => {
 
     const [inputs, setInputs] = useState({});
-
-    const id = useParams().id; 
+    const id = useParams().id;
+    // logging to see thr passed values 
     console.log(id);
     const history = useNavigate();
+
     useEffect(() => {
         const fetchHandler = async() =>{
-            await axios.get(`http://localhost:5001/recipes/${id}`)
-            .then(res=>res.data).then(data=>setInputs(data.recipe)); 
+            await axios
+            .get(`http://localhost:5001/recipes/${id}`)
+            .then((res)=>res.data)
+            .then((data)=>setInputs(data.recipe)); 
         }
         fetchHandler();
     },[id]);
+
     const sendRequest = async()=>{
-        await axios.put("http://localhost:5001/recipes/${id}",{
+        await axios
+        .put("http://localhost:5001/recipes/${id}",{
             recipeId:Number(inputs.recipeId),
             name:String(inputs.name),
             ingredients:String(inputs.ingredients),
             description:String(inputs.description),
             image:String(inputs.imageLink)
-        }).then(res=>res.data)
+        }).then((res)=>res.data);
     }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        sendRequest().then(()=>history("/recipes"))
+        sendRequest().then(()=>history("/recipes"));
     }
+
     const handleChange =(event) =>{
         setInputs((prevState)=>({
             ...prevState,
             [event.target.name]: event.target.value
         }));
     }
+
     return (
     <div>
     { inputs && (   
@@ -105,7 +113,7 @@ const RecipeDetail = () => {
     </form>
     )}
     </div>
-  )
+  );
 }
 
 export default RecipeDetail

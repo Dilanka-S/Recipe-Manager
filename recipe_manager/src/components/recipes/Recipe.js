@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Recipe = (props) => {
     const history = useNavigate();
-    const{_id, recipeId, name, ingredients, description, recipeCover} = props.recipe;
+    const{_id, recipeId, name, ingredients, description, image} = props.recipe;
     const deleteHandler = async () => {
         await axios
           .delete(`http://localhost:5001/recipes/${_id}`)
@@ -18,16 +18,21 @@ const Recipe = (props) => {
 // Card component to configure the output of each list item to be displayed
   return ( 
     <div className='card '>
-    <img src = {recipeCover} alt={name}/>
+    <img src = {image} alt={name}/>
     <article>Recipe ID: {recipeId}</article>
     <h3>{name}</h3>
     <p>{ingredients}</p>
     <p>{description}</p>
     <Button 
     sx={{mt:'auto'}}
-    LinkComponent={Link} to={'/recipes/${_id}'}
-    >Edit</Button>
-    <Button sx={{mt:'auto'}}>Delete</Button>
+    LinkComponent={Link} to={`/recipes/${_id}`}>
+        Edit
+    </Button>
+    <Button
+    sx={{mt:'auto'}}
+    color="error">
+        Delete
+    </Button>
     </div>
   );
 };
