@@ -9,7 +9,7 @@ const RecipeDetail = () => {
 
     const [inputs, setInputs] = useState({});
     const id = useParams().id;
-    // logging to see thr passed values 
+    // logging to see their passed values 
     console.log(id);
     const history = useNavigate();
 
@@ -23,22 +23,25 @@ const RecipeDetail = () => {
         fetchHandler();
     },[id]);
 
+    //Handling the send request
     const sendRequest = async()=>{
         await axios
-        .put("http://localhost:5001/recipes/${id}",{
+        .put(`http://localhost:5001/recipes/${id}`,{
             recipeId:Number(inputs.recipeId),
             name:String(inputs.name),
             ingredients:String(inputs.ingredients),
             description:String(inputs.description),
-            image:String(inputs.imageLink)
+            image:String(inputs.image)
         }).then((res)=>res.data);
     }
 
+    // To handle the submit button click
     const handleSubmit = (event) => {
         event.preventDefault();
         sendRequest().then(()=>history("/recipes"));
     }
 
+    // To handle any changes in the fields
     const handleChange =(event) =>{
         setInputs((prevState)=>({
             ...prevState,
@@ -67,7 +70,7 @@ const RecipeDetail = () => {
             margin="normal"
             fullWidth variant='outlined' 
             name="recipeId"
-            value={inputs.recieptId}
+            value={inputs.recipeId}
             onChange={handleChange}/>
 
             <FormLabel>Name</FormLabel>
@@ -77,16 +80,16 @@ const RecipeDetail = () => {
             name="name"
             value={inputs.name}
             onChange={handleChange}/>
+
             <FormLabel>Ingredients</FormLabel>
-            
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
             name="ingredients"
             value={inputs.ingredients}
             onChange={handleChange}/>
+
             <FormLabel>Description</FormLabel>
-            
             <TextField 
             margin="normal"
             fullWidth variant='outlined'
@@ -99,15 +102,16 @@ const RecipeDetail = () => {
             margin="normal"
             fullWidth variant='outlined'
             name="imageLink"
-            value={inputs.imageLink}
+            value={inputs.image}
             onChange={handleChange}/>  
             
             <Button variant='contained' 
             type="submit"
             justifyContent="center"
             fullWidth= "outlined"
-            color="primary">
-                Add your new recipe!    
+            color="primary"
+            sx={{fontFamily:"initial"}}>
+                Update the recipe    
             </Button>  
         </Box>
     </form>
@@ -116,4 +120,4 @@ const RecipeDetail = () => {
   );
 }
 
-export default RecipeDetail
+export default RecipeDetail;

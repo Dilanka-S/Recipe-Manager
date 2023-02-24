@@ -7,7 +7,7 @@ const Creator = () => {
     Name : Dilanka
     <Box display='flex'  flexDirection='Column' alignItems='center'>
         <Typography 
-        sx={{fontFamily:"monospace"}}
+        sx={{fontFamily:"fantasy"}}
         variant="h2">This is sample MERN CRUD App
         </Typography>
 

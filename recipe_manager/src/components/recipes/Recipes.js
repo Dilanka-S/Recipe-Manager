@@ -3,11 +3,13 @@ import axios from 'axios';
 import Recipe from './Recipe'
 import "./Recipe.css"
 
+// URL containing the address of the landing where all the recipes are
 const URL = "http://localhost:5001/recipes";
 
 const fetchHandler = async() => {
     return await axios.get(URL).then((res)=> res.data) 
 }
+
 const Recipes = () => {
     const [recipes, setRecipes] = useState();
     useEffect(() => {
@@ -19,7 +21,7 @@ const Recipes = () => {
         <ul>
             {recipes && 
             recipes.recipes.map((recipe, i)=>(
-                <li className="book" key={i}>
+                <li className="recipe" key={i}>
                     <Recipe recipe={recipe}/>
                 </li>
             ))}

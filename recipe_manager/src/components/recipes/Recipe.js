@@ -30,7 +30,8 @@ const Recipe = (props) => {
     </Button>
     <Button
     sx={{mt:'auto'}}
-    color="error">
+    color="error"
+    onClick={deleteHandler}>
         Delete
     </Button>
     </div>

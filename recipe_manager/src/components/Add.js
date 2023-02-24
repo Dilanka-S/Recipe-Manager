@@ -49,7 +49,8 @@ const AddRecipe = () => {
         marginLeft={"auto"}
         marginRight={"auto"}
         marginTop={10}>
-
+            <h1 marginTop={"3px"}>Let's add a new recipe to your collection!</h1>
+            
             <FormLabel>Recipe ID</FormLabel>
             <TextField 
             type = "number"
@@ -95,12 +96,11 @@ const AddRecipe = () => {
             type="submit"
             justifyContent="center"
             fullWidth= "outlined"
-            color="primary">
-                Add your new recipe!    
+            color="secondary">
+                submit new recipe    
             </Button>    
         </Box>
     </form>
-  
 }
 
 export default AddRecipe
