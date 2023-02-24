@@ -28,7 +28,7 @@ const Header = () => {
 
                     <Tab 
                     LinkComponent={NavLink} 
-                    to="/AddRecipe" 
+                    to="/add" 
                     label='Add Recipe'/>
 
                     <Tab 
