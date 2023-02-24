@@ -4,12 +4,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = require("./routes/recipe-routes");
 const app = express();
- 
+const cors = require('cors'); 
 //Middlewares
 // app.use('/',(request, response, next)=>{
 //     response.send("Welcome to the Recipe Manager")
 // });
 app.use(express.json());
+app.use(cors());
 app.use("/recipes", router);
 //Connecting to the MongoDB server
 mongoose.set('strictQuery',false);

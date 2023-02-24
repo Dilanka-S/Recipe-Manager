@@ -21,13 +21,18 @@ const Header = () => {
                 onChange={(e, val) => setValue(val)}>
                     <Tab 
                     LinkComponent={NavLink} 
-                    to="/add" 
+                    to="/recipes" 
+                    label='Recipes'/>
+
+                    <Tab 
+                    LinkComponent={NavLink} 
+                    to="/addRecipe" 
                     label='Add Recipe'/>
 
                     <Tab 
                     LinkComponent={NavLink} 
                     to="/creator" 
-                    label='View Creator'/>
+                    label='The Creator'/>
                 </Tabs>
             </Toolbar>
         </AppBar>

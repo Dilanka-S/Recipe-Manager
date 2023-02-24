@@ -33,7 +33,7 @@ const getById = async(req,res,next)=>{
 } 
 // Function to add a new recipe to the database
 const addRecipe = async(req,res,next)=>{
-    const {recipeId, name, ingredients, description, recipeCover} = req.body;
+    const {recipeId, name, ingredients, description, image} = req.body;
     let recipe;
     try{
         recipe = new Recipe({
@@ -41,7 +41,7 @@ const addRecipe = async(req,res,next)=>{
             name,
             ingredients,
             description,
-            recipeCover
+            image
         });
         await recipe.save(); 
     }catch(error){
@@ -54,7 +54,7 @@ const addRecipe = async(req,res,next)=>{
 }
 //  Function to update a given recipe with ID
 const updateRecipe = async(res, req, next) =>{
-    const {recipeId, name, ingredients, description, recipeCover} = req.body;
+    const {recipeId, name, ingredients, description, image} = req.body;
     const id = req.params.id;
     let recipe;
     try{
@@ -63,16 +63,16 @@ const updateRecipe = async(res, req, next) =>{
             name,
             ingredients,
             description,
-            recipeCover
+            image
         });
         recipe = await recipe.save(); 
     }catch(error){
         console.log(error);
     }
     if (!recipe){
-        return res.status(500).json({message:'Unable to update recipe with this ID!'});
+        return res.status(404).json({message:'Unable to update recipe with this ID!'});
     }
-    return res.status(201).json({recipe});
+    return res.status(200).json({recipe});
 
 }
 // function to delete a recipe with the given object ID

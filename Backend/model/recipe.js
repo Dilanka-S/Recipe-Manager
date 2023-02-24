@@ -19,8 +19,9 @@ const recipeSchema = new Schema({
         type: String,
         required: true
     },
-    recipeCover: {
-        
+    image: {
+        type : String,
+        required: true
     }
 
 });
