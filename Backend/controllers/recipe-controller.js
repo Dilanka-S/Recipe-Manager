@@ -53,9 +53,9 @@ const addRecipe = async(req,res,next)=>{
     return res.status(201).json({recipe});
 }
 //  Function to update a given recipe with ID
-const updateRecipe = async(res, req, next) =>{
-    const {recipeId, name, ingredients, description, image} = req.body;
+const updateRecipe = async(req, res, next) =>{
     const id = req.params.id;
+    const {recipeId, name, ingredients, description, image} = req.body;
     let recipe;
     try{
         recipe = await Recipe.findByIdAndUpdate(id,{
@@ -89,6 +89,7 @@ const deleteRecipe = async(req, res, next) => {
     return res.status(201).json({message: "The recipe with the given ID has been removed successfully"});   
 }
 
+//Exportin the created routes
 exports.getAllRecipes = getAllRecipes;
 exports.addRecipe = addRecipe;
 exports.getById = getById;

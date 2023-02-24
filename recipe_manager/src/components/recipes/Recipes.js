@@ -19,9 +19,9 @@ const Recipes = () => {
         <ul>
             {recipes && 
             recipes.recipes.map((recipe, i)=>(
-                <div className="book" key={i}>
+                <li className="book" key={i}>
                     <Recipe recipe={recipe}/>
-                </div>
+                </li>
             ))}
         </ul>
     </div>
