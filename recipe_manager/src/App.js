@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import AddRecipe from "./components/Add.js";
 import Recipes from "./components/recipes/Recipes"
 import Creator from "./components/Creator";
+import RecipeDetail from "./components/recipes/RecipeDetail";
 function App() {
   return <React.Fragment>
     <header>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/add" element={<AddRecipe/>} exact />
         <Route path="/recipes" element={<Recipes/>} exact />
         <Route path="/creator" element={<Creator/>} exact />
+        <Route path="/recipes/:id" element={<RecipeDetail/>} exact/>
 
       </Routes>
     </main>
